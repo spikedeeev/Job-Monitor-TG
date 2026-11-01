@@ -1,0 +1,93 @@
+{
+  "rules": [
+    { "tag": "Next.js", "weight": 26, "pattern": ["next\\.?js"] },
+    { "tag": "NestJS", "weight": 26, "pattern": ["nest\\.?js"] },
+    { "tag": "React", "weight": 24, "pattern": ["react(?:\\.?js)?", "реакт"] },
+    { "tag": "Node.js", "weight": 18, "pattern": ["node(?:\\.?js)?"] },
+    { "tag": "Web3", "weight": 18, "pattern": ["wagmi", "ethers(?:\\.?js)?", "web3(?:\\.?js)?", "viem", "dapp", "smart[\\s-]?contracts?", "смарт[\\s-]?контракт\\w*"] },
+    { "tag": "Express", "weight": 8, "pattern": ["express(?:\\.?js)?"] },
+    { "tag": "Prisma", "weight": 8, "pattern": ["prisma"] },
+    { "tag": "PostgreSQL", "weight": 8, "pattern": ["postgres(?:ql)?", "postgre"] },
+    { "tag": "TypeScript", "weight": 10, "pattern": ["typescript", "ts"] },
+    { "tag": "JavaScript", "weight": 6, "pattern": ["javascript", "js", "джаваскрипт", "vanilla(?:\\s*js)?", "ванильн\\w*"] },
+    { "tag": "Tailwind", "weight": 6, "pattern": ["tailwind(?:\\s*css)?"] },
+    { "tag": "MobX", "weight": 6, "pattern": ["mobx"] },
+    { "tag": "HTML/CSS", "weight": 4, "pattern": ["html5?", "css3?", "sass", "scss", "верстк\\w*"] },
+    { "tag": "Redis", "weight": 4, "pattern": ["redis"] },
+    { "tag": "REST API", "weight": 5, "pattern": ["rest(?:ful)?(?:\\s*api)?"] },
+    { "tag": "OAuth", "weight": 3, "pattern": ["oauth2?"] },
+    { "tag": "Docker", "weight": 3, "pattern": ["docker"] },
+    { "tag": "Puppeteer", "weight": 4, "pattern": ["puppeteer", "playwright", "парсинг\\w*", "scraping", "scraper"] },
+    { "tag": "Fullstack", "weight": 10, "pattern": ["full[\\s-]?stack", "фулл[\\s-]?стек", "web[\\s-]?developer", "веб[\\s-]?разработчик"] },
+    { "tag": "Frontend", "weight": 6, "pattern": ["front[\\s-]?end", "фронт[\\s-]?енд\\w*"] },
+    { "tag": "Backend", "weight": 3, "pattern": ["back[\\s-]?end", "бэк[\\s-]?енд\\w*"] }
+  ],
+  "coreTags": ["Next.js", "NestJS", "React", "Node.js", "Web3"],
+  "stackTags": ["Next.js", "NestJS", "React", "Node.js", "Web3", "Fullstack", "TypeScript", "JavaScript", "Frontend"],
+  "noCoreCap": 35,
+  "workType": {
+    "tag": "Freelance",
+    "bonus": 8,
+    "pattern": ["freelance", "contract", "part[\\s-]?time", "project", "фриланс\\w*", "проект\\w*", "подработк\\w*", "заказ\\w*", "remote", "удал[её]н\\w*"]
+  },
+  "crypto": {
+    "tag": "Crypto",
+    "bonus": 8,
+    "payment": "крипта (USDT/USDC)",
+    "pattern": ["usdt", "usdc", "crypto", "крипт\\w*"]
+  },
+  "negotiable": {
+    "payment": "обсуждается",
+    "pattern": ["negotiable", "по\\s+договор[её]нности", "обсуждается", "обсуждаем"]
+  },
+  "foreign": {
+    "penaltyEach": 20,
+    "maxPenalty": 60,
+    "pattern": [
+      ["python", "django", "fastapi", "flask"],
+      ["java", "kotlin", "spring", "scala"],
+      ["c#", "\\.net", "asp\\.net"],
+      ["golang", "go\\s+(?:developer|разработчик\\w*|backend|engineer)"],
+      ["php", "laravel", "symfony"],
+      ["ruby", "rails"],
+      ["vue(?:\\.?js)?", "nuxt(?:\\.?js)?"],
+      ["angular(?:\\.?js)?", "rxjs"],
+      ["ios", "swift"],
+      ["android", "flutter", "react\\s+native"],
+      ["unity", "unreal"],
+      ["wordpress", "bitrix\\w*", "битрикс\\w*"],
+      ["1c", "1с"],
+      "rust", "elixir", "c\\+\\+", "svelte", "ember", "sap", "salesforce",
+      ["data\\s+scien\\w+", "machine\\s+learning"],
+      "devops\\s+engineer",
+      ["qa\\s+engineer", "тестировщик\\w*", "manual\\s+qa"]
+    ]
+  },
+  "penalties": [
+    {
+      "name": "staff-job",
+      "penalty": 20,
+      "pattern": ["полная\\s+занятость", "full[\\s-]?time", "гибрид\\w*", "hybrid", "офис\\w*", "office", "в\\s+штат", "5/2", "график\\s+работы", "оформление\\s+по\\s+тк", "relocation", "релокейт\\w*"]
+    },
+    {
+      "name": "junior-intern",
+      "penalty": 10,
+      "pattern": ["стажер\\w*", "стажёр\\w*", "intern(?:ship)?", "trainee"]
+    }
+  ],
+  "seeker": {
+    "pattern": [
+      "ищу\\s+(?:\\w+\\s+)?(?:работу|заказ\\w*|проект\\w*|подработк\\w*|вакансию)",
+      "ищет\\s+(?:\\w+\\s+)?(?:работу|заказ\\w*|проект\\w*|подработк\\w*|вакансию)",
+      "в\\s+поиске\\s+(?:работы|заказ\\w*|проект\\w*)",
+      "рассматриваю\\s+(?:\\w+\\s+)?предложени\\w*",
+      "мо[её]\\s+резюме",
+      "готов\\s+(?:взяться|взять|работать|к\\s+работе)",
+      "looking\\s+for\\s+(?:\\w+\\s+)?(?:work|a\\s+job|jobs|projects?|clients?|opportunit\\w+|role|position)",
+      "open\\s+(?:to|for)\\s+(?:work|offers|opportunit\\w+)",
+      "available\\s+for\\s+hire",
+      "my\\s+(?:cv|resume)"
+    ],
+    "hiringOverride": ["ищем", "требуется", "нужен", "нужна", "нужны", "вакансия", "hiring", "we\\s+are\\s+looking", "we're\\s+looking", "в\\s+команду"]
+  }
+}

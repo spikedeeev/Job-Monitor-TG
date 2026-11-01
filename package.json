@@ -1,0 +1,35 @@
+{
+  "name": "telegram-job-bot",
+  "version": "1.0.0",
+  "description": "Self-hosted Telegram job and freelance gig monitor: scores posts against your tech stack, removes duplicates and resumes, notifies you via bot.",
+  "license": "MIT",
+  "keywords": ["telegram", "telegram-bot", "job-bot", "job-search", "freelance", "jobs", "mtproto", "gramjs", "nestjs", "typescript", "bullmq", "postgresql", "redis", "web3", "react", "nextjs"],
+  "engines": { "node": ">=20" },
+  "private": true,
+  "scripts": {
+    "rescore": "ts-node src/scripts/rescore.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "dev": "ts-node src/main.ts",
+    "login": "ts-node src/scripts/login.ts",
+    "test": "node --require ts-node/register --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.0",
+    "@nestjs/core": "^10.4.0",
+    "@nestjs/platform-express": "^10.4.0",
+    "bullmq": "^5.12.0",
+    "dotenv": "^16.4.5",
+    "ioredis": "^5.4.1",
+    "pg": "^8.12.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "telegram": "^2.26.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/pg": "^8.11.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  }
+}
