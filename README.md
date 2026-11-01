@@ -43,17 +43,6 @@ REST API and PostgreSQL integration.
 - **REST API** – `GET /jobs` to browse everything that was found.
 - **Tested** – unit tests for scoring, de-duplication and contact extraction.
 
-## How it works
-
-```
-Telegram channels
-      │  MTProto (GramJS, your account, read-only)
-      ▼
-  Collector ──► Redis queue (BullMQ) ──► Scoring (profile.json) ──► optional OpenAI
-                                                                         │
-                         Telegram Bot API ◄── PostgreSQL (dedupe) ◄──────┘
-                         (notification to you)
-```
 
 ## Tech stack
 
